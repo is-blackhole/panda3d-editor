@@ -775,3 +775,7 @@ class MainFrame( wx.Frame ):
         self.auiCfg = AuiManagerConfig( self._mgr, 'pandaEditorWindow' )
         self.auiCfg.Load()
         self._mgr.Update()
+
+    def AddPane(self, obj, paneDef):
+        self._mgr.AddPane( obj, paneDef )
+        self._mgr.Update()
