@@ -1,14 +1,10 @@
 import wx
 
-import pandac.PandaModules as pm
-
 from wxExtra import utils as wxUtils
 
-import p3d
 from game.plugins.base import Base
 
 from materialProperties import MaterialProperties
-from previewViewport import PreviewViewport
 
 ID_CREATE_MATERIAL = wx.NewId()
 ID_WIND_MATERIAL_PREVIEW = wx.NewId()
@@ -26,7 +22,6 @@ class EditorPlugin(Base):
         self.ui.mCreate.AppendSeparator()
         self.ui.mCreate.AppendSubMenu(self.mPrim, '&Materials')
         self.pnlMaterialProperties = MaterialProperties(self.ui, style=wx.SUNKEN_BORDER)
-        #self.pnlMaterialProperties = PreviewViewport(self.ui, style=wx.SUNKEN_BORDER)
         self.pnlMaterialProperties.Initialize()
 
         self.paneDef = wx.aui.AuiPaneInfo()\
